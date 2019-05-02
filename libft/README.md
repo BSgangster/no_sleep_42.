@@ -1,6 +1,6 @@
 # Libft
 
-![Lib img](Files/lib.png)
+![lib](Files/lib.png)
 
 ## Libft description
 
