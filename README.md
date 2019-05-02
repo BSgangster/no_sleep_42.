@@ -1,5 +1,5 @@
 # no_sleep_42.
-![Wethinkcode Logo](Files/WTC_logo.jpg)
+![Wethinkcode Logo](Files/WTC_logo.gif)
 
 ## Aim of this repo?
 
