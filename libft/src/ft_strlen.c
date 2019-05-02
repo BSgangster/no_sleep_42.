@@ -1,3 +1,4 @@
+//fuck it i aint commenting this it's too easy
 int ft_strlen(char *str)
 {
   int len;
