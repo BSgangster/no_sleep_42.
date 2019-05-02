@@ -1,9 +1,19 @@
 # no_sleep_42.
-Teamwork on the 42 curriculum. Covering the 2 years we'll have wethinkcode which makes use of 42 curriculum. Not everything obviously but whatever we worked on as a team.
+![Wethinkcode Logo](Files/WTC_logo.jpg)
 
-Projects so far:
+## Aim of this repo?
 
--Libft:
-Which i basically just project where write our own version of the functions that is used in the standard C library or libraries.
+Well it's simple. Working together to tackle wethinkcode curriculum(Or basically tackling 42's). We can all add and push on this repo, just remember to comment your code make it easier for everyone.
 
-(Still more to come i guess)
+## Projects(so far):
+
+* [Libft](libft/)
+
+## Download
+
+Just run the following command - `git clone --recursive https://github.com/BSgangster/no_sleep_42..git`
+Pretty sure that'll download the whole repo on your device.
+
+## Wait there's more?
+
+Will share any kak I'm working on , on this repo. If you guys are keen do the same
