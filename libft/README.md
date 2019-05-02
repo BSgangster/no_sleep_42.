@@ -1,6 +1,6 @@
 # Libft
 
-<img src="../Files/lib.png" width="350" />
+<img src="../Files/lib.png" width="250" />
 
 ## Libft description
 
