@@ -8,8 +8,8 @@ A project where we have to use the C bootcamp we did, do build a library based o
 
 ## Content
 
-[Resources](Resources/)
+* [Resources](Resources/)
 
-[src](src/)
+* [src](src/)
 
 ## Will be updated soon..
