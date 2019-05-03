@@ -12,6 +12,6 @@ char* ft_strcopy(char *dest,const char *src)
 		dest++;
 		src++;
 	}
-	*dest = '\0';//Adding the null char to end of the string array dest, well all strings end with it.
+	*dest = '\0';//Adding the null char to end of the string array dest, well all strings end with it. 
 	return start;
 }
