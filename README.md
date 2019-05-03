@@ -11,7 +11,7 @@ Well it's simple. Working together to tackle wethinkcode curriculum(Or basically
 
 ## Rules
 
-There are no ru...Nah, in a world full of chaos you gotta keep order, so here we go:    
+<b>There are no ru...Nah, in a world full of chaos you gotta keep order, so here we go:</b>    
 * [Comment your code always, not everyone's code is completely readable, unless you write in python ^^]
 * [Please add you name , when you commit. Add it after a dash preferably, eg, '- Kobus']
 * [Question other people's code, try to improve it, use a faster algorithm to impove time complexity or even space      complexity in some cases, however please have your reasons when u change code.]
