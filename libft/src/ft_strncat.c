@@ -14,7 +14,7 @@ char *strncat(char *dest, const char *src, size_t n)
 
 	while((n > 0) && src[j]) //remember we want n amount characters
 	{
-		dest[i + j] = src[j]; //start adding things to the end of the destination string. 
+		dest[i + j] = src[j]; //start adding things to the end of the destination string.  
 		j++;
 		n--;
 	}
