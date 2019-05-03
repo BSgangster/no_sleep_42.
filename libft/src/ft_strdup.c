@@ -1,4 +1,4 @@
-#include<stdlib.h>
+#include<stdlib.h> // for malloc
 
 //makes a complete duplicate of an array, well string array mostly
 char *strdup(char *str)
