@@ -18,6 +18,6 @@ char *strncat(char *dest, const char *src, size_t n)
 		j++;
 		n--;
 	}
-	dest[i + j] = '\0';
+	dest[i + j] = '\0'; //ending the string
 	return dest;
 }
