@@ -13,5 +13,5 @@ char *ft_strncopy(char *dest, char *src, int n)
 		n--;//decrementing n, because it's the value of that decides when this loop should end too
 	}
 	dest = '\0';//make string end
-	return start;//return copied string arrays header address.
+	return start;//return copied string arrays header address. 
 }
