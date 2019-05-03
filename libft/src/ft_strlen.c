@@ -1,4 +1,4 @@
-//fuck it i aint commenting this it's too easy
+//Quite an easy one
 int ft_strlen(char *str)
 {
   size_t len;//do some research size_t
