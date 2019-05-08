@@ -16,6 +16,7 @@ Well it's simple. Working together to tackle wethinkcode curriculum(Or basically
 * Please add you name , when you commit. Add it after a dash preferably, eg, '- Kobus'
 * Question other people's code, try to improve it, use a faster algorithm to impove time complexity or even space      complexity in some cases, however please have your reasons when u change code.
 * Please do not mess up the repo man, this is people's hardwork
+* Email bubblesortguru@gmail.com if you want to collab :)
 
 ## Download
 
