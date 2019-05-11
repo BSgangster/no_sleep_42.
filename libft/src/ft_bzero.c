@@ -1,4 +1,4 @@
-#include <libft.h>
+#include "libft.h"
 
 //bzero is basically memset but , we don't replace space with any type of int , we just replace it with zeros.
 //ver basic stuff.
