@@ -1,6 +1,3 @@
-#include<stdio.h>
-#include<string.h>
-
 /*memset is basically a function that fills up a certain space in memory(like an array for example)
  *
  *
@@ -16,7 +13,7 @@
  * this will fill word up A's until the 8th index. Remember the char A is actaully an integer value of 65 or something, I think, fuck who knows
  */
 
-char *ft_memset(char *src, int x, size_t n)
+void *ft_memset(void *src, int x, size_t n)
 {
 	unsigned char *start;
 
