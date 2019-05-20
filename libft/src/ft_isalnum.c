@@ -1,4 +1,6 @@
 
+#include "libft.h"
+
 int ft_isalnum(int c)
 {
     if(c > 1) //this function is checking if a single character is alphanumeric so if there are two characters or more it's no longer a alphanumeric
