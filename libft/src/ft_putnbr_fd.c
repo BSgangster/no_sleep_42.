@@ -1,3 +1,5 @@
+#inlcude "libft.h"
+
 //changes a string that represents a number, into an integer.
 void ft_putnbr_fd(int n,int fd)
 {
