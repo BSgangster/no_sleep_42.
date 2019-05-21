@@ -1,4 +1,4 @@
-include "libft.h"
+#include "libft.h"
 
 //strstr is a very simple function, all it does is it finds a subtring in a string and returns the address of the first occurence of that substring.
 char *ft_strstr(const char *str,const char *substr)
