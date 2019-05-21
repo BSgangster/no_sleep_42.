@@ -20,7 +20,7 @@ char *ft_strstr(const char *str,const char *substr)
             y++;
         if(substr[y] == '\0')
         {
-            return ((char *)&substr[x]);//returning the address of the first occurence hence why we use x not y.
+            return ((char *)&str[x]);//returning the address of the first occurence hence why we use x not y.
         }
         y = 0;
         x++;
