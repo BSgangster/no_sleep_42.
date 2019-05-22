@@ -11,8 +11,7 @@ char **ft_strsplit(const str *str,char c)
     x = 0;
     z = 0;
     if(!(2d_array = (char **)malloc(ft_splitcount(str,c) * sizeof(char *) + 1)))
-        return NULL;
-    
+        return NULL;  
     while(x < ft_splitcount(str,c))
     {
         if(!2d_array[x] = (char *)malloc(ft_split_len(&str[z],c) * sizeof(char) + 1))
