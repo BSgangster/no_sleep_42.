@@ -4,11 +4,17 @@
 size_t ft_split_len(char *str,char c)
 {
     size_t x;
+    size_t len;
     
     x = 0;
-    while(str[x] != c)
+    len = 0;
+    while(str[x])
     {
-        x++;
+        if(str[x] == c)
+            x++;
+        else
+           len++
+           x++;
     }
-    return x;
+    return len;
 }
