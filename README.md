@@ -27,5 +27,6 @@ Pretty sure that'll download the whole repo on your device.
 
 ## Wait there's more?
 
-Will share anything I'm working on , on this repo. If you guys are keen do the same.\n
+Will share anything I'm working on , on this repo. If you guys are keen do the same.
+
 Norminetter(Text editor that will make sure your code is up to norm standards. I hate norminette and I'm lazy so why not.)...coming soon
