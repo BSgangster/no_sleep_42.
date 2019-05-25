@@ -3,7 +3,7 @@
 
 ## Aim of this repo?
 
-Well it's simple. Working together to tackle wethinkcode curriculum(Or basically tackling 42's). We can all add and push on this repo, just remember to comment your code make it easier for everyone.
+Well it's simple. Working together to tackle 42's curriculum. We can all add and push on this repo, just remember to comment your code make it easier for everyone.
 
 ## Projects(so far):
 
