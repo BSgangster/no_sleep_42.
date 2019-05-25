@@ -1,3 +1,5 @@
+#include "libft.h"
+
 //easy stuff
 
 char ft_tolower(char c)
