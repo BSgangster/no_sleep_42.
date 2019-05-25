@@ -9,6 +9,8 @@ Well it's simple. Working together to tackle wethinkcode curriculum(Or basically
 
 * [Libft](libft/)
 
+* [headerfile_maker](headerfile_maker)
+
 ## Rules
 
 <b>There are no ru...Nah, in a world full of chaos you gotta keep order, so here we go:</b>    
@@ -25,4 +27,5 @@ Pretty sure that'll download the whole repo on your device.
 
 ## Wait there's more?
 
-Will share any kak I'm working on , on this repo. If you guys are keen do the same
+Will share anything I'm working on , on this repo. If you guys are keen do the same.
+Norminetter(Text editor that will make sure your code is up to norm standards. I hate norminette and I'm lazy so why not.)...coming soon
