@@ -17,6 +17,9 @@ def find_proto(file_name):
     return prototype
 
 while counter < dir_len:
+    if c_files[counter] == 'Makefile':
+        counter += 1
+        continue
     if c_files[counter].split('.')[1] == 'c':
         proto_list.append(find_proto(c_files[counter]))
     counter += 1
