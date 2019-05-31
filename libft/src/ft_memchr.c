@@ -7,7 +7,7 @@ void *ft_memchr(const void *src,int c,size_t n)
     unsigned char uc;//same with the character.
     
     usrc = (unsigned char *)src;//here we do the actual casting
-    uc = (unsigned char *)c;
+    uc = (unsigned char )c;
     i = 0;
     while(i < n)//stop when we reach n.
     {

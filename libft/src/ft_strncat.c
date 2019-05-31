@@ -1,3 +1,4 @@
+#include "libft.h"
 //Well i think this function just concatenates the n amount chars from the source, correct me if i'm wrong too lazy to check
 char *strncat(char *dest, const char *src, size_t n)
 {

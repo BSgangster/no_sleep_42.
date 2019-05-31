@@ -1,3 +1,4 @@
+#include "libft.h"
 /*memset is basically a function that fills up a certain space in memory(like an array for example)
  *
  *

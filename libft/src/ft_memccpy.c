@@ -1,7 +1,7 @@
 #include "libft.h"
 
 //basically this is just memcopy, however , we stop copying when reach either value c, or we get to the n size of bytes.
-void *ft_memccopy(void *dest, const void *src, int c, size_t n)
+void *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
     unsigned char *s;
     unsigned char *usrc;
@@ -15,7 +15,7 @@ void *ft_memccopy(void *dest, const void *src, int c, size_t n)
         if(usrc[i] == (unsigned char)c)
         {
             s[i + 1] = c;
-            return &s;
+            return s;
         }
         s[i] = usrc[i];
         i++;

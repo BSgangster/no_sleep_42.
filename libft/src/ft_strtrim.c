@@ -1,7 +1,6 @@
 #include "libft.h"
 
 //very simple function, just trims out all the whitespaces in the beginning or end of a string.
-int ft_iswhitespace(char c);
 char	*ft_strtrim(const char *s)
 {
 	char *newstring;
@@ -21,7 +20,7 @@ char	*ft_strtrim(const char *s)
 	//let's erase the spaces at the end of the string.
 	while(ft_iswhitespace(s[newstring_len--]))	
 		continue;	
-	newstring_len - i;
+	newstring_len--;
 	newstring = malloc(newstring_len * sizeof(char) + 1);
 	//let's get the on empty space stuff
 	while(s[i] && (i <= newstring_len))

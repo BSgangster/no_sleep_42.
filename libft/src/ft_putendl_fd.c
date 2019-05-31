@@ -5,7 +5,7 @@ void ft_putendl_fd(const char *str, int fd)
 {
     while(*str)
     {
-        write(fd,*str,1);
+        write(fd,&(*str),1);
         str++;
     }
     write(fd,"\n",1);

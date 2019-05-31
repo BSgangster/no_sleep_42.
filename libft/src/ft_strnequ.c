@@ -9,7 +9,7 @@ int     ft_strnequ(const char *str,const char *str1,size_t n)
                 return(0);
 	if(!n)
 		return(0);
-        if(ft_strlen(str) != strlen(str1))
+        if(ft_strlen(str) != ft_strlen(str1))
                 return(0);
         while(str[i] && (i < n))
         {

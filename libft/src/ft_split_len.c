@@ -1,7 +1,7 @@
 #include "libft.h"
 
 //very simple, gets the size of the strings between the delimeters.
-size_t ft_split_len(char *str,char c)
+size_t ft_split_len(const char *str,char c)
 {
     size_t	x;
 	size_t	len;

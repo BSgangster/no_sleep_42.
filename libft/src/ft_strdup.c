@@ -1,14 +1,14 @@
 #include<stdlib.h> // for malloc
 
 //makes a complete duplicate of an array, well string array mostly
-char *strdup(char *str)
+char	*ft_strdup(char *str)
 {
-  char *dup;//this will be the duplicate array of course
-  int len;//length array to keep track of the length of the ^^str array
+  char	*dup;//this will be the duplicate array of course
+  int	len;//length array to keep track of the length of the ^^str array
 
   len = 0;
   //loop through the str to get the length of it
-  while(str[len])
+  while (str[len])
   {
     len++;
   }
@@ -17,11 +17,10 @@ char *strdup(char *str)
 
   len--;//change to being one less because arrays start at 0. So last index could not be length of the array, it has to be one less.
   //in this loop we literally just duplicate str, but making dup have the same values in side it's array space.
-  while(len >= 0)
+  while (len >= 0)
   {
     dup[len] = str[len];
     len--;
   }
-
   return dup;//return the duplicate.
 }

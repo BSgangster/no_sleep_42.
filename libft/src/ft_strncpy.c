@@ -1,3 +1,4 @@
+#include "libft.h"
 //okay this is basically ft_strcopy, but instead of copying everything from the source array, we just copy an n amount of of shit.
 char *ft_strncopy(char *dest, char *src, int n)
 {
@@ -12,6 +13,6 @@ char *ft_strncopy(char *dest, char *src, int n)
 		src++;
 		n--;//decrementing n, because it's the value of that decides when this loop should end too
 	}
-	dest = '\0';//make string end
+	*dest = '\0';//make string end
 	return start;//return copied string arrays header address. 
 }

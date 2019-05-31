@@ -1,3 +1,4 @@
+#include "libft.h"
 //memcpy is a function used to copy  x  amount of objects from src array to your destination array. Not really a tough one, it's similar strcopy but in this case we work with not a specific data type.
 //hence the void pointers.
 void	*ft_memcpy(void *dest, const void *src,size_t n)

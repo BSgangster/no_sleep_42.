@@ -10,7 +10,7 @@ char	*ft_strjoin(const char *str,const char *str1)
 	i = 0;
 	j = 0;
 	//check if the memory assignment went wrong. Then return NULL
-	if(!(fresh_string = malloc((strlen(str) + strlen(str1)) * sizeof(char) + 1)))
+	if(!(fresh_string = malloc((ft_strlen(str) + ft_strlen(str1)) * sizeof(char) + 1)))
 		return (NULL);
 	//starts adding the first string
 	while(str[i])

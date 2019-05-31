@@ -7,7 +7,7 @@ int	ft_strequ(const char *str,const char *str1)
 	i = 0;
 	if (!(str || str1))
 		return(0);
-	if(ft_strlen(str) != strlen(str1))
+	if(ft_strlen(str) != ft_strlen(str1))
 		return(0);
 	while(str[i])
 	{
