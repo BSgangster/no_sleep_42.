@@ -34,7 +34,7 @@ header_file.write('# define LIBFT_H' + '\n')
 header_file.write('\n')
 
 #including the header files
-header_file.write('\\\\Place your imports/includes over here' + '\n')
+header_file.write('//Place your imports/includes over here' + '\n')
 header_file.write('#include <unistd.h>\n')
 header_file.write('#include <stdlib.h>\n')
 
