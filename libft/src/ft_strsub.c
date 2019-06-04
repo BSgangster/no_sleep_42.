@@ -23,5 +23,6 @@ char 	*ft_strsub(const char *str, unsigned int n,size_t len)
 		i++;
 		n++;
 	}
+	substr[i] = '\0';
 	return (substr);
 }

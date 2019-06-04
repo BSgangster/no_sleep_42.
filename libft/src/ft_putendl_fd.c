@@ -1,12 +1,12 @@
 #include "libft.h"
 
-//writing every character in the string, using the given file description.
-void ft_putendl_fd(const char *str, int fd)
+void	ft_putendl_fd(char const *s, int fd)
 {
-    while(*str)
-    {
-        write(fd,&(*str),1);
-        str++;
-    }
-    write(fd,"\n",1);
+	int		i;
+
+	i = 0;
+	if (s)
+		while (s[i])
+			write(fd, &s[i++], 1);
+	write(fd, "\n", 1);
 }

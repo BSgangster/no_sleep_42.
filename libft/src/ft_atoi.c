@@ -14,7 +14,7 @@ int ft_atoi(const char *str)
     //in the case where it holds no value we gotta return 0
     while(!str[i])
     {
-        return(0);
+        return (0);
     }
     
     //remove all white spaces
@@ -33,15 +33,14 @@ int ft_atoi(const char *str)
     {   
 	sign = 1;
         i++;
-    }
-    
+    } 
     //now for the converting part.
-    while(str[i])
+    while(str[i] && str[i] >= '0' && str[i] <= '9')
     {   
-        ans = ans * 10 + (str[i] - '0'); //in our case of the example string '123', this code here will do the follwing, 0 * 10 + 1 = 1, 1 * 10 + 2 = 12, 12 * 10 + 3 = 123, see the pattern? 
+        ans = ans * 10 + ((int)str[i] - '0'); //in our case of the example string '123', this code here will do the follwing, 0 * 10 + 1 = 1, 1 * 10 + 2 = 12, 12 * 10 + 3 = 123, see the pattern? 
         i++; //get to the next character in the string , to do the steps above, that i committed.
     }
-    return ans * sign;
+    return (ans * sign);
 }
 
 //test code for this include string.h and stdio.h :) sometimes, I change some things without testing em, so please before u use the code as an example test em.

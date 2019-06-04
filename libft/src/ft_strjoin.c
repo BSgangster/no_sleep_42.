@@ -9,6 +9,8 @@ char	*ft_strjoin(const char *str,const char *str1)
 	
 	i = 0;
 	j = 0;
+	if(!str || !str)
+		return (NULL);
 	//check if the memory assignment went wrong. Then return NULL
 	if(!(fresh_string = malloc((ft_strlen(str) + ft_strlen(str1)) * sizeof(char) + 1)))
 		return (NULL);
@@ -19,12 +21,13 @@ char	*ft_strjoin(const char *str,const char *str1)
 		i++;
 	}
 	//starts adding the second string
-	while(str[j])
+	while(str1[j])
 	{
-		fresh_string[i + j] = str1[j];
+		fresh_string[i] = str1[j];
 		j++;
+		i++;
 	}
-	fresh_string[i + j] = str1[j];
-	fresh_string[i + j + 1] = '\0';//get that null char in.
+	//fresh_string[i] = str1[j];
+	fresh_string[i] = '\0';//get that null char in.
 	return (fresh_string);
 }

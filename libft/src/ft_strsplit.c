@@ -10,7 +10,7 @@ char **ft_strsplit(const char *str,char c)
     
     x = 0;
     z = 0;
-    if(!(arr_array = (char **)malloc(ft_splitcount(str,c) * sizeof(char *) + 1)))
+    if(!str || !(arr_array = (char **)malloc(ft_splitcount(str,c) * sizeof(char *) + 1)))
         return NULL;  
     while(x < ft_splitcount(str,c))
     {

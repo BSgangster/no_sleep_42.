@@ -10,7 +10,7 @@ void	*ft_memalloc(size_t size)
 	if (!size)
 		return (NULL);
 	//checks if the space allocations went wrong
-	if (!(new_array = (unsigned char *)malloc(size + 1)))
+	if (!(new_array = (unsigned char *)malloc(size)))
 		return NULL;
 	i = 0;
 	//inseering 0s where the space was allocated.

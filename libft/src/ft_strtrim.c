@@ -9,21 +9,23 @@ char	*ft_strtrim(const char *s)
 	size_t x;
 	
 	x = 0;
-	newstring_len = ft_strlen(s);
+	i = 0;
 	if(!s)
-	{
 		return (NULL);
-	}
-	//let's get the white spaces infront of the string
+ 	//let's get the white spaces infront of the string
 	while(ft_iswhitespace(s[i]))
 		i++;
-	//let's erase the spaces at the end of the string.
-	while(ft_iswhitespace(s[newstring_len--]))	
-		continue;	
-	newstring_len--;
-	newstring = malloc(newstring_len * sizeof(char) + 1);
+		//if the input is only blank then return this
+		if(s[i] == '\0')
+			return ("");
+	//let's erase the spaces at the end of the string
+	newstring_len = ft_strlen(s);
+	while(ft_iswhitespace(s[--newstring_len]))	
+		continue;
+	if(!(newstring = ft_strnew((newstring_len - i + 1))))
+		return (NULL);
 	//let's get the on empty space stuff
-	while(s[i] && (i <= newstring_len))
+	while(i < newstring_len + 1)
 	{
 		newstring[x] = s[i];
 		x++;
