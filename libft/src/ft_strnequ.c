@@ -2,7 +2,7 @@
 
 int     ft_strnequ(const char *str,const char *str1,size_t n)
 {
-        int i;
+        size_t	i;
 
         i = 0;
         if (!(str && str1))

@@ -1,5 +1,5 @@
-NAME = libft.a
-FLAGES = -Wall -Wextra -Werror
+NAME = libft.so
+FLAGES = -fPIC -Wall -Werror -Wextra -pedanti
 GCC = gcc
 SRC = *.c
 OPTION = -c $(SRC)
@@ -11,6 +11,11 @@ $(NAME):
 	$(GCC) $(FLAGS) $(OPTION)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
+
+so:
+	gcc -c ft_*.c -Wall -Wextra -Werror
+	gcc -shared -o libft.so -fPIC ft*.o
+	rm *.o
 
 clean:
 	/bin/rm -f $(OBJ)

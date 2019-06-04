@@ -4,7 +4,7 @@
 void	*ft_memalloc(size_t size)
 {
 	unsigned char	*new_array;
-	int		i;
+	size_t		i;
 	
 	//checks if the size is just empty
 	if (!size)

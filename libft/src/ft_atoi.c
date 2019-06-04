@@ -4,13 +4,13 @@
 //are in mind that we consider the characters we get are '0' - '9', not alphabet characters or special characters. :)
 int ft_atoi(const char *str)
 {
-    int ans;
-    int sign;
-    int i;
+    int	ans;
+    int	sign;
+    int	i;
     
     i = 0;
+    sign = 1;
     ans = 0;
-    
     //in the case where it holds no value we gotta return 0
     while(!str[i])
     {
@@ -25,11 +25,15 @@ int ft_atoi(const char *str)
     
     //so removed all the spaces now , obviously in any mathetical sense, the next character should be a sign, - or +, if it is make sign negative or positive, remember signs stays postive if we find no signs in the string. 
     if(str[i] == '-')
+    {
         sign = -1;
         i++;
-    if(str[i] == '+')
-        sign = 1;
+    }
+    else if(str[i] == '+')
+    {   
+	sign = 1;
         i++;
+    }
     
     //now for the converting part.
     while(str[i])
@@ -37,7 +41,7 @@ int ft_atoi(const char *str)
         ans = ans * 10 + (str[i] - '0'); //in our case of the example string '123', this code here will do the follwing, 0 * 10 + 1 = 1, 1 * 10 + 2 = 12, 12 * 10 + 3 = 123, see the pattern? 
         i++; //get to the next character in the string , to do the steps above, that i committed.
     }
-    return ans;
+    return ans * sign;
 }
 
 //test code for this include string.h and stdio.h :) sometimes, I change some things without testing em, so please before u use the code as an example test em.

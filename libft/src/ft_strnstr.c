@@ -3,13 +3,11 @@
 //same as strstr just in this case we search n amount of character through source string, nothing more.
 char *ft_strnstr(const char *str,const char *substr,size_t n)
 {
-    int x;
-    int y;
-    size_t i;
+    size_t	x;
+    size_t	y;
     
     x = 0;
     y = 0;
-    i = 0;
     
     if(!substr[0])//if the subtr is just nothing dont even bother looking for it just return the whole source string.
     {

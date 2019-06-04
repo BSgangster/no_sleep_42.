@@ -2,7 +2,7 @@
 //maps out an array that has function f, applied to every single character in the source array.
 char	*ft_strmap(const char *str,char (*f)(char))
 {
-	int	i;
+	size_t	i;
 	size_t	len;
 	char	*new_str;
 

@@ -4,15 +4,19 @@
 void *ft_memmove(void *dest,const void *src, size_t n)
 {
 	unsigned int	i;
-
+	unsigned char *udest;
+	unsigned char *usrc;
+	
 	i = 0;
+	udest = (unsigned char *)dest;
+	usrc = (unsigned char *)src;
 	//check if src does not overlap dest
-	if((unsigned char *)src < (unsigned char *)dest)
+	if(usrc < udest)
 	{
 		//if it doesnt then just copy the corresponding values of src to dest
 		while(n-- > 0)
 		{
-			(unsigned char *)dest[n] = (unsigned char *)src[n];
+			udest[n] = usrc[n];
 		}
 	}
 	//if it does overlap however , do eitherwise
@@ -21,7 +25,7 @@ void *ft_memmove(void *dest,const void *src, size_t n)
 		//copy whatever us in src into dest, but stop as soon as you reach n amount.
 		while(i < n)
 		{
-			(unsigned char *)dest[i] = (unsigned char *)src[i];
+			udest[i] = usrc[i];
 			i++;
 		}
 	}
