@@ -36,10 +36,15 @@ int ft_atoi(const char *str)
     } 
     //now for the converting part.
     while(str[i] && str[i] >= '0' && str[i] <= '9')
-    {   
-        ans = ans * 10 + ((int)str[i] - '0'); //in our case of the example string '123', this code here will do the follwing, 0 * 10 + 1 = 1, 1 * 10 + 2 = 12, 12 * 10 + 3 = 123, see the pattern? 
-        i++; //get to the next character in the string , to do the steps above, that i committed.
-    }
+    {  
+	if(ans <= 2147483647/10)
+	{	
+		ans = ans * 10 + ((int)str[i] - '0'); //in our case of the example string '123', this code here will do the follwing, 0 * 10 + 1 = 1, 1 * 10 + 2 = 12, 12 * 10 + 3 = 123, see the pattern? 
+        	i++; //get to the next character in the string , to do the steps above, that i committed.
+    	}
+	else
+		return (0);
+	}
     return (ans * sign);
 }
 

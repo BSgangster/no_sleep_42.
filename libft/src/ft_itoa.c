@@ -5,9 +5,11 @@ char *ft_itoa(int n)
 {
     int len;
     char *str;
-
+    if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
     len = int_len(n);//this function is in the library i use, it gets the length of the integer.
-    str = (char *)malloc((len+1) * sizeof(char));
+    if(!(str = (char *)malloc((len+1) * sizeof(char))))
+	return (NULL);
     if(n < 0)//checks if n is negative if so then put a minus sign in the string
     {
         str[0] = '-';
