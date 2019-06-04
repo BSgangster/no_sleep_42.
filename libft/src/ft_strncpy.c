@@ -1,6 +1,6 @@
 #include "libft.h"
 //okay this is basically ft_strcopy, but instead of copying everything from the source array, we just copy an n amount of of shit.
-char *ft_strncopy(char *dest, char *src, int n)
+char *ft_strncpy(char *dest, char *src, int n)
 {
 	char *start = dest;//same as we what we did in ft_strcopy
 	

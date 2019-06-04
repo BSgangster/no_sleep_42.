@@ -10,6 +10,8 @@ void *ft_memmove(void *dest,const void *src, size_t n)
 	i = 0;
 	udest = (unsigned char *)dest;
 	usrc = (unsigned char *)src;
+	if(!dest && !src)
+		return (NULL);
 	//check if src does not overlap dest
 	if(usrc < udest)
 	{

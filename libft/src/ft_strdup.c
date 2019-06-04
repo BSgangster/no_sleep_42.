@@ -13,10 +13,11 @@ char	*ft_strdup(char *str)
     len++;
   }
 
-  dup = (char *)malloc(sizeof(char) * len-1);//make the array dup now have the size of the array str, but using the len value in the malloc
+  if(!(dup = (char *)malloc(sizeof(char) * len + 1)))
+	return (NULL);
+//make the array dup now have the size of the array str, but using the len value in the malloc
 
-  len--;//change to being one less because arrays start at 0. So last index could not be length of the array, it has to be one less.
-  //in this loop we literally just duplicate str, but making dup have the same values in side it's array space.
+ //in this loop we literally just duplicate str, but making dup have the same values in side it's array space.
   while (len >= 0)
   {
     dup[len] = str[len];

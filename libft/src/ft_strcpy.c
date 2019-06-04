@@ -1,5 +1,5 @@
 //this function copies the string array. And returns the copy array.
-char* ft_strcopy(char *dest,const char *src)
+char* ft_strcpy(char *dest,const char *src)
 {
 	//get a variable to store first index of the dest array so that we iterate through it but still have the index address available
 	char *start;

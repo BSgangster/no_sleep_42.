@@ -1,4 +1,4 @@
-NAME = libft.so
+NAME = libft.a
 FLAGES = -fPIC -Wall -Werror -Wextra -pedanti
 GCC = gcc
 SRC = *.c

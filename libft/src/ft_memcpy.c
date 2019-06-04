@@ -3,17 +3,18 @@
 //hence the void pointers.
 void	*ft_memcpy(void *dest, const void *src,size_t n)
 	{
-		size_t i;//used to index through the two arrays
-		unsigned char *udest;//these replacement vars are formed to work with an array/s who will anything text related.
-		unsigned char *usrc;
 
-		i = 0;
-	
+		size_t		i;//used to index through the two arrays
+		unsigned char	*udest;//these replacement vars are formed to work with an array/s who will anything text related.
+		unsigned char	*usrc;
+
+		i = 0;	
 		udest = (unsigned char *)dest;//casting the dest and src arrays to unsigned char pointers so that once again we can work with text(or ASCII vals representd with ints).
 		usrc = (unsigned char *)src;
-
 		while(i < n)
 		{
+			if(dest == '\0' && src == '\0')
+				break;
 			udest[i] = usrc[i];
 			i += 1;
 		}
