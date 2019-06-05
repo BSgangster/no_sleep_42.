@@ -8,6 +8,8 @@
 
 * Will not push bonus content until I've test them well :)
 
+* Adding some math functions.
+
 ## Content
 
 * [Resources](Resources/)
