@@ -3,7 +3,7 @@
 
 ## Aim of this repo?
 
-Well it's simple. Working together to tackle 42's curriculum. We can all add and push on this repo, just remember to comment your code make it easier for everyone.
+* Tackling 42's curriculum. And most of all to learn new things and teach new things to others, hence why all my code will have comments. 
 
 ## Projects(so far):
 
@@ -17,16 +17,15 @@ Well it's simple. Working together to tackle 42's curriculum. We can all add and
 * Comment your code always, not everyone's code is completely readable, unless you write in python ^^
 * Please add you name , when you commit. Add it after a dash preferably, eg, '- Kobus'
 * Question other people's code, try to improve it, use a faster algorithm to impove time complexity or even space      complexity in some cases, however please have your reasons when u change code.
-* Please do not mess up the repo man, this is people's hardwork
 * Email bubblesortguru@gmail.com if you want to collab :)
 
 ## Download
 
 Just run the following command - `git clone --recursive https://github.com/BSgangster/no_sleep_42..git`
-Pretty sure that'll download the whole repo on your device.
 
 ## Wait there's more?
 
-Will share anything I'm working on , on this repo. If you guys are keen do the same.
+Will share anything I'm working on to make life easier at Wethinkcode.
 
 Norminetter(Text editor that will make sure your code is up to norm standards. I hate norminette and I'm lazy so why not.)...coming soon
+(Might do this for fun but I don't think it's 'legal' to use).
