@@ -14,7 +14,7 @@ static void		check_num_str(char *str)
 	}
 }
 
-int				atoi_base(char *str, char *base)
+int				ft_atoi_base(char *str, char *base)
 {
 	int		dec;
 	int		i;
