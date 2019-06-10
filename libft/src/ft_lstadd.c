@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void	lstadd(t_list **alst,t_list *new)
+void	ft_lstadd(t_list **alst,t_list *new)
 {
 	//adding the copy just to be safe but I am very sure you can just new it won't be destructive.
 	t_list *acopy;
