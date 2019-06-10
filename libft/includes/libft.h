@@ -66,5 +66,5 @@ char 	*ft_strsub(const char *str, unsigned int n,size_t len);
 char	*ft_strtrim(const char *s);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
-int int_len(int n);
+int ft_int_len(int n);
 #endif

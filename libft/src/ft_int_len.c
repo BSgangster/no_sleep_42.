@@ -1,6 +1,6 @@
 //gets the length of an actual integer not a string
 //not going to explain this one it's fairly simple :)
-int int_len(int n)
+int ft_int_len(int n)
 {
     int i;
     
