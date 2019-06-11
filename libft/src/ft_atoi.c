@@ -2,11 +2,13 @@
 
 //ft_atoi is the mimic function of atoi, atoi stands for ascii to integer. Converting characters into integers, that's what this function does.
 //are in mind that we consider the characters we get are '0' - '9', not alphabet characters or special characters. :)
+/*
 int ft_atoi(const char *str)
 {
     int	ans;
     int	sign;
     int	i;
+    long long x;
     
     i = 0;
     sign = 1;
@@ -36,20 +38,24 @@ int ft_atoi(const char *str)
     } 
     //now for the converting part.
     while(str[i] && str[i] >= '0' && str[i] <= '9')
-    {  
-	if(ans <= 2147483647/10)
-	{	
-		ans = ans * 10 + ((int)str[i] - '0'); //in our case of the example string '123', this code here will do the follwing, 0 * 10 + 1 = 1, 1 * 10 + 2 = 12, 12 * 10 + 3 = 123, see the pattern? 
+    {
+		if(ft_strlen(str) > 10)
+			x = x * 10 + ((long long)str[i] - '0');
+		else
+			ans = ans * 10 + ((int)str[i] - '0'); //in our case of the example string '123', this code here will do the follwing, 0 * 10 + 1 = 1, 1 * 10 + 2 = 12, 12 * 10 + 3 = 123, see the pattern? 
         	i++; //get to the next character in the string , to do the steps above, that i committed.
-    	}
-	else
-		return (0);
 	}
     return (ans * sign);
 }
+*/
 
-//test code for this include string.h and stdio.h :) sometimes, I change some things without testing em, so please before u use the code as an example test em.
+int	ft_atoi(const char *str)
+{
+	return ft_atoi_base(str,10,"-+0123456789");
+}
+
 /*
+test codee for this include string.h and stdio.h :) sometimes, I change some things without testing em, so please before u use the code as an example test em.
 int main(void)
 {
     printf("%d",ft_atoi("123"));

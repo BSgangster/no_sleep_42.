@@ -3,12 +3,11 @@
 //convert an actual integer into an string that represents that integer.
 char *ft_itoa(int n)
 {
-	/*
     int len;
     char *str;
     if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-    len = int_len(n);//this function is in the library i use, it gets the length of the integer.
+    len = ft_int_len(n);//this function is in the library i use, it gets the length of the integer.
     if(!(str = (char *)malloc((len+1) * sizeof(char))))
 	return (NULL);
     if(n < 0)//checks if n is negative if so then put a minus sign in the string
@@ -27,10 +26,6 @@ char *ft_itoa(int n)
     if(str[0] != '-')//if it's a negative number then make sure you don't replace the minus with a zero.
         str[len] = n % 10 + '0';
     return str;
-	*/
-	if(n == 0)
-		return ("0");
-	return (ft_itoa_base(n,10));
 }
 
 /*just test code

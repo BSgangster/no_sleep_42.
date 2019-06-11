@@ -1,44 +1,25 @@
 #include "libft.h"
 
-static void		check_num_str(char *str)
+long long	ft_atoi_base(const char *str, size_t base, const char *format)
 {
-	int		i;
+	int		sign;
+	long long		val;
 
-	i = 0;
-	while (str[i])
+	sign = 1;
+	val = 0;
+	while (ft_checkifspace(*str))
+		++str;
+	if (*str == format[0] || *str == format[1])
 	{
-		if (((str[i] >= '\0' && str[i] < '0') ||(str[i] > '9' && str[i] < 'A')
-			|| (str[i] > 'F')) && str[i] != '-')
-			file_error();
-		i++;
+		if (*str == format[0])
+			sign = -1;
+		++str;
 	}
-}
-
-int				ft_atoi_base(char *str, char *base)
-{
-	int		dec;
-	int		i;
-	int		j;
-	int		y;
-	int		sgn;
-
-	j = 0;
-	dec = 0;
-	sgn = 1;
-	check_num_str(str);
-	i = ft_strlen(str, '\0') - 1;
-	while (str[i] && str[i] != '-' && str[i] != '+' && i >= 0)
+	while (ft_memchr(&format[2], *str, base) && *str)
 	{
-		y = 0;
-		while (base[y] && str[i] != base[y])
-			y++;
-		if (y == ft_strlen(base, '\0'))
-			y = 0;
-		dec += y * power(ft_strlen(base, '\0'), j++);
-		i--;
+		val *= base;
+		val += sign * ((char *)ft_memchr(&format[2], *str, base) - &format[2]);
+		++str;
 	}
-	while (str[i] && i >= 0)
-		if (str[i--] == '-')
-			sgn *= -1;
-	return (dec * sgn);
+	return (val);
 }
