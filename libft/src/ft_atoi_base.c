@@ -1,10 +1,9 @@
 #include "libft.h"
 
-long long	ft_atoi_base(const char *str, size_t base, const char *format)
+long long int	ft_atoi_base(const char *str, size_t base, const char *format)
 {
 	int		sign;
-	long long		val;
-
+	long long int val;
 	sign = 1;
 	val = 0;
 	while (ft_checkifspace(*str))
@@ -18,8 +17,14 @@ long long	ft_atoi_base(const char *str, size_t base, const char *format)
 	while (ft_memchr(&format[2], *str, base) && *str)
 	{
 		val *= base;
-		val += sign * ((char *)ft_memchr(&format[2], *str, base) - &format[2]);
+		val += ((char *)ft_memchr(&format[2], *str, base) - &format[2]);
 		++str;
 	}
-	return (val);
+	if (val < -2147483648)
+		return (0);
+	if(val < -9223372036854775807)
+		return (0);
+	if(val >= 9223372036854775807)
+		return (-1);
+	return (sign * val);
 }

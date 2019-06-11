@@ -3,7 +3,7 @@
 //changes a string that represents a number, into an integer.
 void ft_putnbr_fd(int n,int fd)
 {
-    char c;
+    long int n2;
     
     if(n == -2147483648)//if we get this value then straight up write it.
     {
