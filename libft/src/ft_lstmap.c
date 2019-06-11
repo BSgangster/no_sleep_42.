@@ -1,12 +1,12 @@
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, t_list * (*f)(t_list elem))
+t_list *ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
 {
-	t_list *fresh_lst;
+	t_list *fresh_list;
 
 	//safe guarding
 	if(!lst || !f)
-		return(NULL);
+		return (NULL);
 	//iteration with recursion and applying f
 	if(lst -> next)
 	{

@@ -3,6 +3,7 @@
 //convert an actual integer into an string that represents that integer.
 char *ft_itoa(int n)
 {
+	/*
     int len;
     char *str;
     if (n == -2147483648)
@@ -26,6 +27,10 @@ char *ft_itoa(int n)
     if(str[0] != '-')//if it's a negative number then make sure you don't replace the minus with a zero.
         str[len] = n % 10 + '0';
     return str;
+	*/
+	if(n == 0)
+		return ("0");
+	return (ft_itoa_base(n,10));
 }
 
 /*just test code

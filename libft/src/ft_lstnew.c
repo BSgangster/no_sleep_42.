@@ -5,7 +5,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	t_list *new;
 	
 	//create the struct object/linked list, if unsuccesful return NULL
-	if (!(new = (*t_list)malloc(size_of(t_list) * content_size)))
+	if (!(new = (t_list*)malloc(sizeof(t_list) * content_size)))
 	{
 		return (NULL);
 	}
@@ -24,6 +24,6 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		ft_memcpy(new -> content, content,content_size);
 		new -> content_size = content_size;
 	}
-	new -> NULL;
+	new -> next = NULL;
 	return (new);
 }

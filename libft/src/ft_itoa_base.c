@@ -1,24 +1,35 @@
 #include "libft.h"
 
-char *itoa_base(int value, int base)
+static int		conv_ex(int nb)
 {
-    static  char rep[] = "0123456789abcdef";
-    static  char buf[50];
-    char    *ptr;
-    int     num;
+	if (nb >= 10)
+		return (nb - 10 + 'a');
+	else
+		return (nb + '0');
+}
 
-    ptr = &buf[49];
-    *ptr = '\0';
-    num = value;
-    if (value < 0 && base == 10)
-        value *= -1;
-    if (value == 0)
-        *--ptr = rep[value % base];
-    while (value != 0)
-    {
-        *--ptr = rep[value % base];
-        value /= base;
-    }
-    if (num < 0 && base == 10)
-        *--ptr = '-';
-    return (ptr);
+char	*ft_itoa_base(int value, int base)
+{
+	int					i;
+	char				*str;
+	int				tmp;
+
+	i = 0;
+	tmp = value;
+	while (tmp >= base)
+	{
+		tmp = tmp / base;
+		i++;
+	}
+	if (!(str = (char *)malloc((sizeof(char) * i) + 1)))
+		return (NULL);
+	str[i + 1] = '\0';
+	while (i >= 0)
+	{
+		tmp = value % base;
+		str[i] = conv_ex(tmp);
+		value /= base;
+		i--;
+	}
+	return (str);
+}

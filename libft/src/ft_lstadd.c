@@ -7,9 +7,9 @@ void	ft_lstadd(t_list **alst,t_list *new)
 	
 	//safe guarding.
 	if(!(new) || !(alst))
-		return (NULL);
+		return ;
 	//adding new to copy var, then to next pointer of new/copy u add the alst, then make alst point to new. basically to shorten this, we added new as a new node to the alst linked list.
 	acopy = new;
 	acopy -> next = *alst;
-	alst  = new;
+	*alst  = new;
 }
