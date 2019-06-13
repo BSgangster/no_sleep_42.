@@ -9,7 +9,9 @@
 
 * [Libft](libft/)
 
-* [headerfile_maker](headerfile_maker)
+* [headerfile_maker](headerfile_maker/)
+
+* [get_next_line](get_next_line/)
 
 ## Rules
 
