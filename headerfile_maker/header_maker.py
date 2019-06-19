@@ -8,24 +8,33 @@ counter = 0
 header_file = 'libft.h'
 proto_list = []
 
-def find_proto(file_name):
+def find_all_proto(file_name):
+    counter = 0
+    proto_list = []
     file_c = open(file_name,'r')
     string1 = file_c.read()
-    x = string1.split('{')[0]
-    y = x.split('\n')
-    prototype = y[len(y)-2]
-    return prototype
+    y = ''
+    x = string1.split('{')
+    for i in string1.split('{'):
+        counter = 0
+        while counter < len(i.split('\n')):
+            if not(i.split('\n')[counter] == [] or ';' in i.split('\n')[counter] or 'include' in i.split('\n')[counter] or '/*' in i.split('\n')[counter] or 'while' in  i.split('\n')[counter] or 'if' in i.split('\n')[counter] or 'if else' in i.split('\n')[counter] or 'else' in i.split('\n')[counter] or '}' in i.split('\n')[counter] or '/w' in i.split('\n')[counter] or '&&' in i.split('\n')[counter] or '||' in i.split('\n')[counter] or 'malloc' in i.split('\n')[counter] or 'sizeof' in i.split('\n')[counter]) and ('void' in i.split('\n')[counter] or 'int' in i.split('\n')[counter] or 'char' in i.split('\n')[counter] or 'size_t' in i.split('\n')[counter] or 'long long int' in i.split('\n')[counter] or 't_list' in i.split('\n')[counter]):
+                y = i.split('\n')[counter]
+                if len(y) > 1:
+                    prototype = y[:len(y)]
+                    proto_list.append(prototype)
+            counter+=1
+    return proto_list
 
 while counter < dir_len:
     if c_files[counter] == 'Makefile':
         counter += 1
         continue
     if c_files[counter].split('.')[1] == 'c':
-        proto_list.append(find_proto(c_files[counter]))
+        proto_list =  proto_list + find_all_proto(c_files[counter])
     counter += 1
 
 counter = 0
-print proto_list
 header_file  = open('libft.h', 'w')
 
 #header file stuff
