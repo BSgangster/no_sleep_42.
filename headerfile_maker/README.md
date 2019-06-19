@@ -5,3 +5,4 @@
 * Please, do not leave this in your src directory or push it with your files. You will get KO'ed for it.
 * Just recently added some code to add in includes, bonus parts(the structs)
 * Also be aware that this not a miracle maker. If u change your function defintions in your c files you have to run this script again or change things manually.
+* Fixed the bug where the program will not prototype mutiple functions inside a c file :)
