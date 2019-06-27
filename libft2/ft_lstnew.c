@@ -6,7 +6,7 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 16:40:20 by icarolus          #+#    #+#             */
-/*   Updated: 2019/06/24 12:44:04 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/06/27 13:50:11 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,4 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	new->next = NULL;
 	return (new);
-}
-
-int main(void)
-{
-	t_list *xx;
-	
-	xx = ft_lstnew("hello",6 * sizeof(char));
-	printf("%s",(char *)xx->content);	
 }
