@@ -6,7 +6,7 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 18:49:28 by icarolus          #+#    #+#             */
-/*   Updated: 2019/06/27 13:56:32 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/06/27 15:14:42 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ size_t			ft_splitcount(const char *str, char c);
 void			ft_putstr(char const *s);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 long long int	ft_atoi_base(const char *str, size_t base, const char *format);
-char			*ft_strdup(char *str);
+char			*ft_strdup(const char *str);
 int				ft_iswhitespace(char c);
 int				ft_atoi(const char *str);
 int				ft_isalnum(int c);
