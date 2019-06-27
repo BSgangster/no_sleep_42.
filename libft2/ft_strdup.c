@@ -6,13 +6,13 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 17:21:02 by icarolus          #+#    #+#             */
-/*   Updated: 2019/06/12 17:21:48 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/06/27 16:15:20 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *str)
+char	*ft_strdup(const char *str)
 {
 	char	*dup;
 	int		len;
