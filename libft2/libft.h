@@ -85,7 +85,7 @@ void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 char			*ft_itoa(int n);
 void			ft_striter(char *str, void (*f)(char *));
 char			*ft_strsub(const char *str, unsigned int n, size_t len);
-char			*ft_strncpy(char *dest, char *src, size_t n);
+char			*ft_strncpy(char *dest,const char *src, size_t n);
 int				ft_tolower(int c);
 int				ft_strcmp(const char *s1, const char *s2);
 #endif
