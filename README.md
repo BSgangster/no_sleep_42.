@@ -7,7 +7,7 @@
 
 ## Projects(so far):
 
-* [Libft](libft/)
+* [Libft](libft2/)
 
 * [headerfile_maker](headerfile_maker/)
 
