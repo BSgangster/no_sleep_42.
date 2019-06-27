@@ -1,5 +1,5 @@
-# include "get_next_line.h"
-/*
+//# include "get_next_line.h"
+
 # include <sys/uio.h>
 # include <fcntl.h>
 # include <string.h>
@@ -107,7 +107,7 @@ char	*ft_strjoin(const char *str, const char *str1)
 	fresh_string[i] = '\0';
 	return (fresh_string);
 }
-*/
+
 
 //function reads a file with fd, line by line
 int		ft_buffreader(int fd, char **line)
@@ -146,7 +146,6 @@ int		get_next_line(const int fd, char **line)
 	//safe guarding
 	if (!buf && !(buf = (char *)malloc(1)))
 		return (-1);
-	
 	while ((str = ft_strchr(buf, '\n')) == NULL)
 	{
 		if ((ret = ft_buffreader(fd, &buf)) == 0 &&
@@ -168,7 +167,7 @@ int		get_next_line(const int fd, char **line)
 	return (1);
 }
 
-/*
+
 int main(void)
 {
 	char *line;
@@ -178,8 +177,7 @@ int main(void)
 	line2 = (char *)malloc((sizeof(char) * 13) + 1);
 	int file_num = open ("text.txt", O_WRONLY | O_CREAT);
 	printf("%d",file_num);
-	write(file_num,"This is line\n",13);
-	write(file_num,"This is liny\n",13);
+	write(file_num,"This is line",13);
 	close(file_num);
 	file_num = open("text.txt",O_RDONLY);
 	printf("%d",file_num);
@@ -188,4 +186,3 @@ int main(void)
 	printf("%s",&line[0]);
 	printf("%s",&line2[0]);
 }
-*/
