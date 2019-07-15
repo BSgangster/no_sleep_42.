@@ -1,55 +1,59 @@
-#include "get_next_line.h"
+#include "libft.h"
 
-int		ft_line_rec(char **str, char **line, int fd, int ret)
+int	end(char *buf)
 {
-	char	*tmp;
-	int		len;
+	int a;
 
-	len = 0;
-	while (str[fd][len] != '\n' && str[fd][len] != '\0')
-		len++;
-	if (str[fd][len] == '\n')
+	a = 0;
+	while (buf[a] && buf[a] != '\n')
+		a++;
+	if (buf[a] == '\n')
+		return (1);
+	return (0);
+}
+
+int	get_new_line(const int fd, char *buf, char *store[fd])
+{
+	int			ret;
+	char		*tmp;
+
+	while ((end(buf) != 1) && ((ret = read(fd, buf, BUFF_SIZE)) > 0))
 	{
-		*line = ft_strsub(str[fd], 0, len);
-		tmp = ft_strdup(str[fd] + len + 1);
-		free(str[fd]);
-		str[fd] = tmp;
-		if (str[fd][0] == '\0')
-			ft_strdel(&str[fd]);
+		buf[ret] = '\0';
+		tmp = store[fd];
+		store[fd] = ft_strjoin(tmp, buf);
+		ft_strdel(&tmp);
 	}
-	else if (str[fd][len] == '\0')
-	{
-		if (ret == BUFF_SIZE)
-			return (get_next_line(fd, line));
-		*line = ft_strdup(str[fd]);
-		ft_strdel(&str[fd]);
-	}
+	ft_strdel(&buf);
+	if (ret < 0)
+		return (-1);
 	return (1);
 }
 
-int		get_next_line(const int fd, char **line)
+int	get_next_line(const int fd, char **line)
 {
-	static char	*str[255];
-	char		buf[BUFF_SIZE + 1];
+	char		*buf;
+	static char	*store[2147483647];
 	char		*tmp;
+	char		*str;
 	int			ret;
 
-	if (fd < 0 || line == NULL)
+	if (fd < 0 || !line || BUFF_SIZE < 1)
 		return (-1);
-	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
+	buf = ft_strnew(BUFF_SIZE);
+	if (!store[fd])
+		store[fd] = ft_strnew(0);
+	if ((ret = get_line(fd, buf, store)) == -1)
+		return (-1);
+	if ((str = ft_strchr(store[fd], '\n')))
 	{
-		buf[ret] = '\0';
-		if (str[fd] == NULL)
-			str[fd] = ft_strnew(1);
-		tmp = ft_strjoin(str[fd], buf);
-		free(str[fd]);
-		str[fd] = tmp;
-		if (ft_strchr(buf, '\n'))
-			break ;
+		*line = ft_strsub(store[fd], 0, str - store[fd]);
+		tmp = store[fd];
+		store[fd] = ft_strdup(str + 1);
+		ft_strdel(&tmp);
+		return (1);
 	}
-	if (ret < 0)
-		return (-1);
-	else if (ret == 0 && (str[fd] == NULL || str[fd][0] == '\0'))
-		return (0);
-	return (ft_new_line(str, line, fd, ret));
+	*line = ft_strdup(store[fd]);
+	ft_strdel(&store[fd]);
+	return (ft_strlen(*line) > 0 ? 1 : 0);
 }
