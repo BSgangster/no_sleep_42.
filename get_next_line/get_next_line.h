@@ -9,7 +9,8 @@
 # include "stdlib.h"
 # include "libft/libft.h"
 
-int		ft_line_rec(char **s, char **line, int fd, int ret);
+int   end();
+int		get_new_line(char **s, char **line, int fd, int ret);
 int		get_next_line(const int fd, char **line);
 
 #endif
