@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_prnf_functions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icarolus <icarolus@student.wethinkcode.    +#+  +:+       +#+        */
+/*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 19:44:16 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/15 19:59:48 by icarolus         ###   ########.fr       */
+/*   Created: 2019/09/16 09:59:48 by icarolus          #+#    #+#             */
+/*   Updated: 2019/09/16 10:00:03 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

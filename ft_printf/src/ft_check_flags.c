@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_flags.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icarolus <icarolus@student.wethinkcode.    +#+  +:+       +#+        */
+/*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 18:58:05 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/15 20:00:00 by icarolus         ###   ########.fr       */
+/*   Created: 2019/09/16 09:56:23 by icarolus          #+#    #+#             */
+/*   Updated: 2019/09/16 09:58:27 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libprintf.h"
 #include <stdio.h>
 
-//flag checking understand these flags, printf_man
 char	*ft_check_flags(char *s, t_arg *arg)
 {
 	while (*s == '#' || *s == '0' || *s == '-' || *s == '+'

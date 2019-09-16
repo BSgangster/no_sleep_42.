@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icarolus <icarolus@student.wethinkcode.    +#+  +:+       +#+        */
+/*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 19:03:25 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/15 20:00:02 by icarolus         ###   ########.fr       */
+/*   Created: 2019/09/16 09:58:47 by icarolus          #+#    #+#             */
+/*   Updated: 2019/09/16 09:59:16 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ static int		ft_printf_flgs(va_list ap, char **s, char *f, int fd)
 	return (z);
 }
 
-//files description ex
 int				ft_des_printf(int fd, const char *restrict format, ...)
 {
 	char	*tmp;
