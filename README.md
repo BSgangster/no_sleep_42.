@@ -11,9 +11,9 @@
 
 * [headerfile_maker](headerfile_maker/)
 
-*[ft_printf](ft_printf/)
+* [ft_printf](ft_printf/)
 
-*[ft_ls](ft_ls/)
+* [ft_ls](ft_ls/)
 
 * [get_next_line](get_next_line/)
 
