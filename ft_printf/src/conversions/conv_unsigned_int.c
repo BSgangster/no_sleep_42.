@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conv_unsigned_int.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icarolus <icarolus@student.wethinkcode.    +#+  +:+       +#+        */
+/*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 20:11:54 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/15 20:11:55 by icarolus         ###   ########.fr       */
+/*   Created: 2019/09/18 09:23:24 by icarolus          #+#    #+#             */
+/*   Updated: 2019/09/18 09:23:30 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,4 @@ int					conv_unsigned_int(va_list ap, t_arg *arg, int conv, char *f)
 		arg->prefix = 0;
 	ft_putstr_fd(f, arg->fd);
 	return (ft_printf_putuint(num, arg, conv));
+}

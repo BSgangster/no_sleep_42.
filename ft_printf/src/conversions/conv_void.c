@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   conv_void.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icarolus <icarolus@student.wethinkcode.    +#+  +:+       +#+        */
+/*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 20:13:21 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/15 20:13:25 by icarolus         ###   ########.fr       */
+/*   Created: 2019/09/18 09:21:06 by icarolus          #+#    #+#             */
+/*   Updated: 2019/09/18 09:21:10 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libprintf.h"
 

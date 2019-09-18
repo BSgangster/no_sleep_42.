@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   conv_utf_8.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icarolus <icarolus@student.wethinkcode.    +#+  +:+       +#+        */
+/*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 20:12:34 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/15 20:12:38 by icarolus         ###   ########.fr       */
+/*   Created: 2019/09/18 09:22:06 by icarolus          #+#    #+#             */
+/*   Updated: 2019/09/18 09:22:10 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libprintf.h"
 
