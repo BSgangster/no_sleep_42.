@@ -6,12 +6,12 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 12:26:29 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/16 12:26:33 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:38:15 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINTF_H
-# define LIBPRINTF_H
+#ifndef PRINTFLIBR_H
+# define PRINTFLIBR_H
 # include <stdarg.h>
 # include <inttypes.h>
 # include "../libft/libft.h"

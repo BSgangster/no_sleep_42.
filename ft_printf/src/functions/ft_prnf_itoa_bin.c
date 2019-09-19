@@ -6,36 +6,36 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 10:01:16 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/16 10:03:04 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:49:57 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-static char	*ft_delate_zero(char *s)
+static char	*ft_delate_zero(char *str)
 {
 	char *tmp;
 
-	tmp = s;
-	while (*s == '0')
-		s++;
-	s = ft_strdup(s);
+	tmp = str;
+	while (*str == '0')
+		str++;
+	str = ft_strdup(s);
 	ft_strdel(&tmp);
-	return (s);
+	return (str);
 }
 
 char		*ft_prnf_itoa_bin(uintmax_t num)
 {
-	char	*s;
+	char	*str;
 	int		i;
 
 	i = 64;
-	s = (char *)malloc(sizeof(uintmax_t) * 8 + 1);
-	ft_strcpy(s, "0");
+	str = (char *)malloc(sizeof(uintmax_t) * 8 + 1);
+	ft_strcpy(str, "0");
 	while (i > 0)
 	{
 		s[i--] = ((num & 0x1) + '0');
 		num >>= 1;
 	}
-	return (ft_delate_zero(s));
+	return (ft_delate_zero(str));
 }

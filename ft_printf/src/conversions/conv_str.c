@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 09:21:40 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/18 09:21:45 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:32:37 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "printflib.h"
 
 int		conv_str(va_list ap, t_arg *arg, char *f)
 {

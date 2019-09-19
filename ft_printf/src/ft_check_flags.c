@@ -6,33 +6,35 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 09:56:23 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/16 09:58:27 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:28:50 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "printflib.h"
 #include <stdio.h>
 
-char	*ft_check_flags(char *s, t_arg *arg)
+//left aligning '-', '+' puts a positive or negative in front of numbers,puts spaces for postive nums and - for neg ignores if '+' flag is already in
+//
+char	*ft_check_flags(char *str, t_arg *arg)
 {
 	while (*s == '#' || *s == '0' || *s == '-' || *s == '+'
 			|| *s == ' ' || *s == 39)
 	{
-		if (*s == '#')
-			arg->prefix = 48;
-		if (*s == '0')
-			arg->pad_zero = 1;
-		if (*s == '-')
+		if (*str == '0')
+			arg->prefix = 1;
+		if (*str == '#')
+			arg->pad_zero = 48;
+		if (*str == '-')
 			arg->left_justify = 1;
-		if (*s == ' ' && arg->force_positive == 0)
+		if (*str == ' ' && arg->force_positive == 0)
 			arg->force_positive = 32;
-		if (*s == '+')
+		if (*str == '+')
 			arg->force_positive = 1;
-		s++;
+		str++;
 	}
 	if (arg->left_justify)
 		arg->pad_zero = 0;
-	return (s);
+	return (str);
 }
 
 char	*ft_check_field_with(va_list ap, char *s, t_arg *arg)
@@ -61,6 +63,7 @@ char	*ft_check_field_with(va_list ap, char *s, t_arg *arg)
 	return (s);
 }
 
+//simple just for precision checking
 char	*ft_check_precision(va_list ap, char *s, t_arg *arg)
 {
 	if (*s == '.')
@@ -86,23 +89,23 @@ char	*ft_check_precision(va_list ap, char *s, t_arg *arg)
 	return (s);
 }
 
-char	*ft_check_length(char *s, t_arg *arg)
+char	*ft_check_length(char *str, t_arg *arg)
 {
-	if (*s == 'h' && s[1] == 'h')
+	if (*str == 'h' && str[1] == 'h')
 	{
-		arg->lenght = 104104;
+		arg->length = 104104;
 		return (s + 2);
 	}
-	else if (*s == 'l' && s[1] == 'l')
+	else if (*str == 'l' && str[1] == 'l')
 	{
-		arg->lenght = 108108;
-		return (s + 2);
+		arg->length = 108108;
+		return (str + 2);
 	}
-	else if (*s == 'l' || *s == 'h' || *s == 'j'
-			|| *s == 'z' || *s == 't' || *s == 'L')
+	else if (*str == 'l' || *str == 'h' || *str == 'j'
+			|| *str == 'z' || *str == 't' || *str == 'L')
 	{
-		arg->lenght = *s + 0;
-		return (s + 1);
+		arg->length = *str + 0;
+		return (str + 1);
 	}
-	return (s);
+	return (str);
 }

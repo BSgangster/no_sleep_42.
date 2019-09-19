@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 09:23:24 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/18 09:23:30 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:38:50 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "printflib.h"
 
 static uintmax_t	ft_check_l(uintmax_t num, t_arg *arg)
 {

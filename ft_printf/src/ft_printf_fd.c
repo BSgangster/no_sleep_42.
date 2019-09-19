@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 09:58:47 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/16 09:59:16 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:57:43 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "printflibr.h"
 
 static int		ft_check_spec_case(char *s, char *f, t_arg arg)
 {

@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 09:21:26 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/18 09:21:29 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/19 19:32:11 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "printflibr.h"
 
 static intmax_t	ft_int_check_length(intmax_t num, t_arg *arg)
 {
