@@ -3,7 +3,7 @@
 
 ## Aim of this repo?
 
-* Tackling 42's curriculum. And most of all to learn new things and teach new things to others, hence why all my code will have comments. 
+* Tackling 42's curriculum. And most of all to learn new things and teach new things to others, hence why all my code will have comments(Soon:D)
 
 ## Projects(so far):
 
