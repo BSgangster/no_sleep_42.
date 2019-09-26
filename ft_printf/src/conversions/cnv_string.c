@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv_utf_8.c                                       :+:      :+:    :+:   */
+/*   conv_str.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 09:22:06 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/19 19:33:20 by icarolus         ###   ########.fr       */
+/*   Created: 2019/09/18 09:21:40 by icarolus          #+#    #+#             */
+/*   Updated: 2019/09/26 15:52:30 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflibr.h"
+#include "../../printflibr.h"
 
-int			conv_utf_8(va_list ap, t_arg *arg, char *f)
+int		cnv_string(va_list ap, t_arg *arg, char *f)
 {
-	int		c;
-	char	*a;
+	char	*s;
 
-	a = NULL;
-	if ((c = va_arg(ap, wchar_t)) < 0 ||
-			(c >= 0xd800 && c < 0xe000) || c > 0x81000)
-		return (-1);
+	s = va_arg(ap, char *);
+	if (arg->precision < 0)
+		arg->precision *= -1;
 	ft_putstr_fd(f, arg->fd);
-	if (c == 0)
-		return (ft_printf_putchar(0, arg));
-	a = ft_printf_from_int_to_utf_8(c, arg);
-	return (ft_printf_pututf_8(a, arg));
+	if (s == NULL)
+		return (ft_prnf_putstr("(null)", arg));
+	return (ft_prnf_putstr(s, arg));
 }

@@ -6,7 +6,7 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 12:26:29 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/19 19:38:15 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 15:56:49 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,25 @@ typedef struct	s_arg
 	int				pad_zero;
 	int				filed_width;
 	int				precision;
-	int				lenght;
+	int				length;
 	int				fd;
 	int				p_switch;
 }				t_arg;
 
 int				ft_printf(const char *restrict format, ...);
-int				ft_des_printf(int fd, const char *restrict format, ...);
-t_arg			ft_printf_new_arg(t_arg *arg);
-int				ft_printf_putint(intmax_t num, t_arg *arg);
-int				ft_printf_putuint(uintmax_t num, t_arg *arg, int conv);
-int				ft_printf_putchar(char c, t_arg *arg);
-int				ft_printf_putstr(char *s, t_arg *arg);
-int				ft_printf_pututf_8(char *c, t_arg *arg);
-int				ft_printf_putstr_utf_8(char *c, t_arg *arg);
-char			*ft_printf_itoa(uintmax_t n);
-char			*ft_printf_itoa_hex(uintmax_t num, int conv, t_arg *arg);
-char			*ft_printf_itoa_oct(uintmax_t num, t_arg *arg);
-char			*ft_printf_itoa_bin(uintmax_t num);
-char			*ft_printf_from_int_to_utf_8(wchar_t c, t_arg *arg);
+int				ft_des_prnf(int fd, const char *restrict format, ...);
+t_arg			ft_prnf_new_arg(t_arg *arg);
+int				ft_prnf_putint(intmax_t num, t_arg *arg);
+int				ft_prnf_putuint(uintmax_t num, t_arg *arg, int conv);
+int				ft_prnf_putchar(char c, t_arg *arg);
+int				ft_prnf_putstr(char *s, t_arg *arg);
+int				ft_prnf_pututf8(char *c, t_arg *arg);
+int				ft_prnf_putstr_utf8(char *c, t_arg *arg);
+char			*ft_prnf_itoa(uintmax_t n);
+char			*ft_prnf_itoa_hex(uintmax_t num, int conv, t_arg *arg);
+char			*ft_prnf_itoa_oct(uintmax_t num, t_arg *arg);
+char			*ft_prnf_itoa_bin(uintmax_t num);
+char			*ft_prnf_int_to_utf8(wchar_t c, t_arg *arg);
 void			ft_write(char c, int i);
 int				ft_pf_write_until(char c, int j, int fd);
 int				ft_pf_putstr(char *s, int fd);
@@ -59,11 +59,11 @@ char			*ft_check_field_with(va_list ap, char *s, t_arg *arg);
 char			*ft_check_precision(va_list ap, char *s, t_arg *arg);
 char			*ft_check_length(char *s, t_arg *arg);
 
-int				conv_int(va_list ap, t_arg *arg, int conv, char *f);
-int				conv_unsigned_int(va_list ap, t_arg *arg, int conv, char *f);
-int				conv_char(va_list ap, t_arg *arg, char *f);
-int				conv_str(va_list ap, t_arg *arg, char *f);
-int				conv_void(va_list ap, t_arg *arg, int conv, char *f);
-int				conv_utf_8(va_list ap, t_arg *arg, char *f);
-int				conv_str_utf_8(va_list ap, t_arg *arg, char *f);
+int				cnv_integer(va_list ap, t_arg *arg, int conv, char *f);
+int				cnv_u_integer(va_list ap, t_arg *arg, int conv, char *f);
+int				cnv_character(va_list ap, t_arg *arg, char *f);
+int				cnv_string(va_list ap, t_arg *arg, char *f);
+int				cnv_voidtype(va_list ap, t_arg *arg, int conv, char *f);
+int				cnv_utf8(va_list ap, t_arg *arg, char *f);
+int				cnv_string_utf8(va_list ap, t_arg *arg, char *f);
 #endif

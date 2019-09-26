@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 12:29:56 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/16 12:29:57 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 15:26:09 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "../../printflibr.h"
 
 static int	ft_left_justify(char *c, t_arg *arg)
 {
@@ -40,7 +40,7 @@ static int	ft_non_justify(char *c, t_arg *arg)
 	return (cnt);
 }
 
-int			ft_printf_putstr_utf_8(char *c, t_arg *arg)
+int			ft_prnf_putstr_utf8(char *c, t_arg *arg)
 {
 	int cnt;
 

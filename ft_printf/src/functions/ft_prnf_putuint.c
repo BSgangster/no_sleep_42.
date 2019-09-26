@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 12:36:33 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/16 12:36:54 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 16:10:37 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "../../printflibr.h"
 
 static int	ft_uint_write_nonjust(char *n, t_arg *arg)
 {
@@ -55,17 +55,17 @@ static int	ft_uint_write_just(char *n, t_arg *arg)
 static char	*ft_check_conv(uintmax_t num, int conv, t_arg *arg, char *n)
 {
 	if (conv == 'x' || conv == 'X' || conv == 'p')
-		n = ft_printf_itoa_hex(num, conv, arg);
+		n = ft_prnf_itoa_hex(num, conv, arg);
 	else if (conv == 'o' || conv == 'O')
-		n = ft_printf_itoa_oct(num, arg);
+		n = ft_prnf_itoa_oct(num, arg);
 	else if (conv == 'b')
-		n = ft_printf_itoa_bin(num);
+		n = ft_prnf_itoa_bin(num);
 	else
-		n = ft_printf_itoa(num);
+		n = ft_prnf_itoa(num);
 	return (n);
 }
 
-int			ft_printf_putuint(uintmax_t num, t_arg *arg, int conv)
+int			ft_prnf_putuint(uintmax_t num, t_arg *arg, int conv)
 {
 	char	*n;
 	int		len;

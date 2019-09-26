@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 09:55:25 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/19 19:51:24 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 15:45:20 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflibr.h"
+#include "../printflibr.h"
 
 static int		ft_check_spec(char *s, char *f, t_arg arg)
 {
@@ -20,7 +20,7 @@ static int		ft_check_spec(char *s, char *f, t_arg arg)
 	if (*s != 0)
 	{
 		ft_putstr_fd(f, arg.fd);
-		z = ft_printf_putchr(*s, &arg);
+		z = ft_prnf_putchar(*s, &arg);
 	}
 	else
 		ft_putstr_fd(f, arg.fd);
@@ -31,7 +31,7 @@ static t_arg	ft_check_flags_format(char **s, va_list ap)
 {
 	t_arg arg;
 
-	arg = ft_printf_new_arg(&arg);
+	arg = ft_prnf_new_arg(&arg);
 	s[0]++;
 	while (**s)
 	{
@@ -48,29 +48,29 @@ static t_arg	ft_check_flags_format(char **s, va_list ap)
 	return (arg);
 }
 
-static char		*ft_printf_flags(va_list ap, char *s, int *cnt, char *f)
+static char		*ft_prnf_flgs(va_list ap, char *s, int *cnt, char *f)
 {
 	t_arg	arg;
 	int		z;
 
 	arg = ft_check_flags_format(&s, ap);
 	if (*s == 'i' || *s == 'd' || *s == 'D')
-		z = conv_int(ap, &arg, *s, f);
+		z = cnv_integer(ap, &arg, *s, f);
 	else if (*s == 'u' || *s == 'U' || *s == 'x' ||
 			*s == 'X' || *s == 'o' || *s == 'O' || *s == 'b')
-		z = conv_unsigned_int(ap, &arg, *s, f);
+		z = cnv_u_integer(ap, &arg, *s, f);
 	else if (*s == 'p')
-		z = conv_void(ap, &arg, *s, f);
-	else if (*s == 'c' && arg.lenght != 'l')
-		z = conv_char(ap, &arg, f);
-	else if (*s == 'C' || (*s == 'c' && arg.lenght == 'l'))
-		z = conv_utf_8(ap, &arg, f);
-	else if (*s == 's' && arg.lenght != 'l')
-		z = conv_str(ap, &arg, f);
-	else if (*s == 'S' || (*s == 's' && arg.lenght == 'l'))
-		z = conv_str_utf_8(ap, &arg, f);
+		z = cnv_voidtype(ap, &arg, *s, f);
+	else if (*s == 'c' && arg.length != 'l')
+		z = cnv_character(ap, &arg, f);
+	else if (*s == 'C' || (*s == 'c' && arg.length == 'l'))
+		z = cnv_utf8(ap, &arg, f);
+	else if (*s == 's' && arg.length != 'l')
+		z = cnv_string(ap, &arg, f);
+	else if (*s == 'S' || (*s == 's' && arg.length == 'l'))
+		z = cnv_string_utf8(ap, &arg, f);
 	else
-		z = ft_check_spec_case(s, f, arg);
+		z = ft_check_spec(s, f, arg);
 	if (z == -1)
 		return (NULL);
 	*cnt += z;
@@ -94,7 +94,7 @@ int				ft_printf(const char *restrict format, ...)
 			break ;
 		if (*tmp == '%')
 		{
-			if ((tmp = ft_printf_flags(ap, tmp, &cnt, f)) == NULL)
+			if ((tmp = ft_prnf_flgs(ap, tmp, &cnt, f)) == NULL)
 				return (-1);
 		}
 		else

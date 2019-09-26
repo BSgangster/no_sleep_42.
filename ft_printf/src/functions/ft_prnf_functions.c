@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 09:59:48 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/16 10:00:03 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 15:32:37 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "../../printflibr.h"
 
 int		ft_pf_write_until(char c, int j, int fd)
 {

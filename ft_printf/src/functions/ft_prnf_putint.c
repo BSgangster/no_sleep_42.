@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 12:35:37 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/16 12:36:12 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 16:02:50 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "../../printflibr.h"
 
 static int	ft_int_write(char *n, t_arg *arg, int cnt)
 {
@@ -41,7 +41,7 @@ static int	ft_int_write(char *n, t_arg *arg, int cnt)
 	return (cnt);
 }
 
-int			ft_printf_putint(intmax_t num, t_arg *arg)
+int			ft_prnf_putint(intmax_t num, t_arg *arg)
 {
 	char	*n;
 	int		len;
@@ -50,7 +50,7 @@ int			ft_printf_putint(intmax_t num, t_arg *arg)
 	cnt = 0;
 	if (num == 0 && arg->p_switch && arg->precision == 0)
 		return (ft_int_write("", arg, cnt));
-	n = ft_printf_itoa(num);
+	n = ft_prnf_itoa(num);
 	len = ft_strlen(n);
 	arg->precision -= len;
 	if (arg->precision > 0)

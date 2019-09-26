@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv_void.c                                        :+:      :+:    :+:   */
+/*   conv_utf_8.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 09:21:06 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/19 19:35:09 by icarolus         ###   ########.fr       */
+/*   Created: 2019/09/18 09:22:06 by icarolus          #+#    #+#             */
+/*   Updated: 2019/09/26 15:55:33 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "../../printflibr.h"
 
-int				conv_void(va_list ap, t_arg *arg, int conv, char *f)
+int			cnv_utf8(va_list ap, t_arg *arg, char *f)
 {
-	void	*num;
+	int		c;
+	char	*a;
 
-	if (arg->precision)
-		arg->pad_zero = 0;
-	num = va_arg(ap, void *);
-	arg->prefix = 120;
+	a = NULL;
+	if ((c = va_arg(ap, wchar_t)) < 0 ||
+			(c >= 0xd800 && c < 0xe000) || c > 0x81000)
+		return (-1);
 	ft_putstr_fd(f, arg->fd);
-	return (ft_printf_putuint((uintmax_t)num, arg, conv));
+	if (c == 0)
+		return (ft_prnf_putchar(0, arg));
+	a = ft_prnf_int_to_utf8(c, arg);
+	return (ft_prnf_pututf8(a, arg));
 }

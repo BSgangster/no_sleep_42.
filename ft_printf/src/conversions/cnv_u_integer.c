@@ -6,34 +6,34 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 09:23:24 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/19 19:38:50 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 15:51:51 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "../../printflibr.h"
 
 static uintmax_t	ft_check_l(uintmax_t num, t_arg *arg)
 {
-	if (arg->lenght == 104104)
+	if (arg->length == 104104)
 		num = (unsigned char)num;
-	else if (arg->lenght == 108108)
+	else if (arg->length == 108108)
 		num = (unsigned long long)num;
-	else if (arg->lenght == 104)
+	else if (arg->length == 104)
 		num = (unsigned short)num;
-	else if (arg->lenght == 108)
+	else if (arg->length == 108)
 		num = (unsigned long)num;
-	else if (arg->lenght == 106)
+	else if (arg->length == 106)
 		num = (uintmax_t)num;
-	else if (arg->lenght == 122)
+	else if (arg->length == 122)
 		num = (size_t)num;
-	else if (arg->lenght == 116)
+	else if (arg->length == 116)
 		num = (ptrdiff_t)num;
-	else if (arg->lenght == 0)
+	else if (arg->length == 0)
 		num = (unsigned int)num;
 	return (num);
 }
 
-int					conv_unsigned_int(va_list ap, t_arg *arg, int conv, char *f)
+int					cnv_u_integer(va_list ap, t_arg *arg, int conv, char *f)
 {
 	uintmax_t num;
 
@@ -56,5 +56,5 @@ int					conv_unsigned_int(va_list ap, t_arg *arg, int conv, char *f)
 	if (conv != 'o' && conv != 'O' && num == 0)
 		arg->prefix = 0;
 	ft_putstr_fd(f, arg->fd);
-	return (ft_printf_putuint(num, arg, conv));
+	return (ft_prnf_putuint(num, arg, conv));
 }

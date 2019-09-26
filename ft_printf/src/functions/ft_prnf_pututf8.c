@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prntf_putchar.c                                 :+:      :+:    :+:   */
+/*   ft_prnf_pututf_8.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 12:32:33 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/16 12:32:38 by icarolus         ###   ########.fr       */
+/*   Created: 2019/09/16 12:31:52 by icarolus          #+#    #+#             */
+/*   Updated: 2019/09/26 15:34:10 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "../../printflibr.h"
 
-int			ft_prnf_putchar(char c, t_arg *arg)
+int			ft_printf_pututf8(char *c, t_arg *arg)
 {
-	int cnt;
+	int	cnt;
 
 	cnt = 0;
-	arg->filed_width -= 1;
+	if (c[0] == 0)
+		cnt += 1;
 	if (arg->left_justify == 0)
 	{
-		if (arg->filed_width > 0 && arg->pad_zero > 0)
-			cnt += ft_pf_write_until('0', arg->filed_width, arg->fd);
-		else if (arg->filed_width > 0)
+		if (arg->filed_width > 0)
 			cnt += ft_pf_write_until(' ', arg->filed_width, arg->fd);
-		cnt += ft_pf_putchar(c, arg->fd);
+		cnt += write(arg->fd, c, ft_strlen(c));
 	}
 	else
 	{
-		cnt += ft_pf_putchar(c, arg->fd);
+		cnt += write(arg->fd, c, ft_strlen(c));
 		if (arg->filed_width > 0)
 			cnt += ft_pf_write_until(' ', arg->filed_width, arg->fd);
 	}
+	ft_strdel(&c);
 	return (cnt);
 }

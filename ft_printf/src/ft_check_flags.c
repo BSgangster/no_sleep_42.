@@ -6,19 +6,17 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 09:56:23 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/19 19:28:50 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 15:46:49 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflib.h"
+#include "../printflibr.h"
 #include <stdio.h>
 
-//left aligning '-', '+' puts a positive or negative in front of numbers,puts spaces for postive nums and - for neg ignores if '+' flag is already in
-//
 char	*ft_check_flags(char *str, t_arg *arg)
 {
-	while (*s == '#' || *s == '0' || *s == '-' || *s == '+'
-			|| *s == ' ' || *s == 39)
+	while (*str == '#' || *str == '0' || *str == '-' || *str == '+'
+			|| *str == ' ' || *str == 39)
 	{
 		if (*str == '0')
 			arg->prefix = 1;
@@ -63,7 +61,6 @@ char	*ft_check_field_with(va_list ap, char *s, t_arg *arg)
 	return (s);
 }
 
-//simple just for precision checking
 char	*ft_check_precision(va_list ap, char *s, t_arg *arg)
 {
 	if (*s == '.')
@@ -94,7 +91,7 @@ char	*ft_check_length(char *str, t_arg *arg)
 	if (*str == 'h' && str[1] == 'h')
 	{
 		arg->length = 104104;
-		return (s + 2);
+		return (str + 2);
 	}
 	else if (*str == 'l' && str[1] == 'l')
 	{

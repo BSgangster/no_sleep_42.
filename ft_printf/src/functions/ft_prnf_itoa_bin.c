@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 10:01:16 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/19 19:49:57 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 15:24:42 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "../../printflibr.h"
 
 static char	*ft_delate_zero(char *str)
 {

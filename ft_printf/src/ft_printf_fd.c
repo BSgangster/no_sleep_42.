@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 09:58:47 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/19 19:57:43 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 15:46:08 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printflibr.h"
+#include "../printflibr.h"
 
 static int		ft_check_spec_case(char *s, char *f, t_arg arg)
 {
@@ -20,7 +20,7 @@ static int		ft_check_spec_case(char *s, char *f, t_arg arg)
 	if (*s != 0)
 	{
 		ft_putstr_fd(f, arg.fd);
-		z = ft_printf_putchar(*s, &arg);
+		z = ft_prnf_putchar(*s, &arg);
 	}
 	else
 		ft_putstr_fd(f, arg.fd);
@@ -31,7 +31,7 @@ static t_arg	ft_check_format(char **s, va_list ap, int fd)
 {
 	t_arg arg;
 
-	arg = ft_printf_new_arg(&arg);
+	arg = ft_prnf_new_arg(&arg);
 	s[0]++;
 	arg.fd = fd;
 	while (**s)
@@ -56,20 +56,20 @@ static int		ft_printf_flgs(va_list ap, char **s, char *f, int fd)
 
 	arg = ft_check_format(s, ap, fd);
 	if (*s[0] == 'i' || *s[0] == 'd' || *s[0] == 'D')
-		z = conv_int(ap, &arg, *s[0], f);
+		z = cnv_integer(ap, &arg, *s[0], f);
 	else if (*s[0] == 'u' || *s[0] == 'U' || *s[0] == 'x' ||
 			*s[0] == 'X' || *s[0] == 'o' || *s[0] == 'O' || *s[0] == 'b')
-		z = conv_unsigned_int(ap, &arg, *s[0], f);
+		z = cnv_u_integer(ap, &arg, *s[0], f);
 	else if (*s[0] == 'p')
-		z = conv_void(ap, &arg, *s[0], f);
-	else if (*s[0] == 'c' && arg.lenght != 'l')
-		z = conv_char(ap, &arg, f);
-	else if (*s[0] == 'C' || (*s[0] == 'c' && arg.lenght == 'l'))
-		z = conv_utf_8(ap, &arg, f);
-	else if (*s[0] == 's' && arg.lenght != 'l')
-		z = conv_str(ap, &arg, f);
-	else if (*s[0] == 'S' || (*s[0] == 's' && arg.lenght == 'l'))
-		z = conv_str_utf_8(ap, &arg, f);
+		z = cnv_voidtype(ap, &arg, *s[0], f);
+	else if (*s[0] == 'c' && arg.length != 'l')
+		z = cnv_character(ap, &arg, f);
+	else if (*s[0] == 'C' || (*s[0] == 'c' && arg.length == 'l'))
+		z = cnv_utf8(ap, &arg, f);
+	else if (*s[0] == 's' && arg.length != 'l')
+		z = cnv_string(ap, &arg, f);
+	else if (*s[0] == 'S' || (*s[0] == 's' && arg.length == 'l'))
+		z = cnv_string_utf8(ap, &arg, f);
 	else
 		z = ft_check_spec_case(*s, f, arg);
 	if (z == -1)
@@ -78,7 +78,7 @@ static int		ft_printf_flgs(va_list ap, char **s, char *f, int fd)
 	return (z);
 }
 
-int				ft_des_printf(int fd, const char *restrict format, ...)
+int				ft_des_prnf(int fd, const char *restrict format, ...)
 {
 	char	*tmp;
 	char	*f;

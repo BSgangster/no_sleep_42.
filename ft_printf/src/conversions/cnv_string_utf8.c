@@ -6,11 +6,11 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 09:20:47 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/18 09:20:51 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 15:59:08 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "../../printflibr.h"
 
 static int		ft_nbrlen(int *nbr)
 {
@@ -75,7 +75,7 @@ static char		*ft_from_int_to_utf(int *s, t_arg *arg)
 	i = 0;
 	if (s && ft_check_n(*s) <= arg->precision)
 	{
-		a = ft_printf_from_int_to_utf_8(*s, arg);
+		a = ft_prnf_int_to_utf8(*s, arg);
 		s++;
 	}
 	else
@@ -85,7 +85,7 @@ static char		*ft_from_int_to_utf(int *s, t_arg *arg)
 		x = a;
 		if ((ft_strlen(a)) + ft_check_n(s[i]) > (unsigned long)arg->precision)
 			break ;
-		r = ft_printf_from_int_to_utf_8(s[i], arg);
+		r = ft_prnf_int_to_utf8(s[i], arg);
 		a = ft_strjoin(x, r);
 		ft_strdel(&x);
 		ft_strdel(&r);
@@ -94,7 +94,7 @@ static char		*ft_from_int_to_utf(int *s, t_arg *arg)
 	return (a);
 }
 
-int				conv_str_utf_8(va_list ap, t_arg *arg, char *f)
+int				cnv_string_utf8(va_list ap, t_arg *arg, char *f)
 {
 	int		*s;
 	char	*a;
@@ -104,10 +104,10 @@ int				conv_str_utf_8(va_list ap, t_arg *arg, char *f)
 		return (-1);
 	ft_putstr_fd(f, arg->fd);
 	if (s == NULL)
-		return (ft_printf_putstr("(null)", arg));
+		return (ft_prnf_putstr("(null)", arg));
 	if (arg->p_switch == 0)
 		arg->precision = ft_nbrlen(s);
 	if ((a = ft_from_int_to_utf(s, arg)) == NULL)
-		return (ft_printf_putstr("", arg));
-	return (ft_printf_putstr_utf_8(a, arg));
+		return (ft_prnf_putstr("", arg));
+	return (ft_prnf_putstr_utf8(a, arg));
 }

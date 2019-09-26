@@ -6,13 +6,13 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 12:28:32 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/16 12:28:35 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/26 15:31:24 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "../../printflibr.h"
 
-int			ft_printf_putstr(char *s, t_arg *arg)
+int			ft_prnf_putstr(char *s, t_arg *arg)
 {
 	int		cnt;
 
