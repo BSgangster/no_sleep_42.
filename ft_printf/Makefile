@@ -6,11 +6,11 @@
 #    By: icarolus <icarolus@student.wethinkcode.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/15 20:14:24 by icarolus          #+#    #+#              #
-#    Updated: 2019/09/26 15:49:57 by icarolus         ###   ########.fr        #
+#    Updated: 2019/09/30 12:54:30 by icarolus         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = printflibr.a
+NAME = libftprintf.a
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -37,14 +37,14 @@ FUNC = ft_prnf_new_arg.c\
 	  ft_prnf_putuint.c\
 	  ft_prnf_putchar.c\
 	  ft_prnf_putstr.c\
-	  ft_prnf_pututf_8.c\
-	  ft_prnf_putstr_utf_8.c\
+	  ft_prnf_pututf8.c\
+	  ft_prnf_putstr_utf8.c\
 	  ft_prnf_itoa.c\
 	  ft_prnf_itoa_hex.c\
 	  ft_prnf_itoa_oct.c\
 	  ft_prnf_itoa_bin.c\
-	  ft_prnf_from_int_to_utf_8.c\
-	  ft_prnf_funct.c
+	  ft_prnf_int_to_utf8.c\
+	  ft_prnf_functions.c
 
 LIB_SRC = ./libft/ft_strlen.o\
 		  ./libft/ft_isdigit.o\

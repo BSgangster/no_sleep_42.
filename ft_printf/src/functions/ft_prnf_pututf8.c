@@ -6,13 +6,13 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 12:31:52 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/26 15:34:10 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/30 12:44:19 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../printflibr.h"
 
-int			ft_printf_pututf8(char *c, t_arg *arg)
+int			ft_prnf_pututf8(char *c, t_arg *arg)
 {
 	int	cnt;
 

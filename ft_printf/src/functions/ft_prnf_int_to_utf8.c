@@ -6,7 +6,7 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 12:27:45 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/26 15:20:42 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/30 13:24:09 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static char	*from_int_to_utf_4(wchar_t c, t_arg *arg)
 	return (a);
 }
 
-char		*ft_printf_from_int_to_utf_8(wchar_t c, t_arg *arg)
+char		*ft_prnf_int_to_utf8(wchar_t c, t_arg *arg)
 {
 	char *a;
 

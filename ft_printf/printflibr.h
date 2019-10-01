@@ -6,7 +6,7 @@
 /*   By: icarolus <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 12:26:29 by icarolus          #+#    #+#             */
-/*   Updated: 2019/09/26 15:56:49 by icarolus         ###   ########.fr       */
+/*   Updated: 2019/09/30 13:27:17 by icarolus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PRINTFLIBR_H
 # include <stdarg.h>
 # include <inttypes.h>
-# include "../libft/libft.h"
+# include "libft/libft.h"
 # include "stddef.h"
 
 static char g_conv[] = "#0-+*.hh hllljz";
