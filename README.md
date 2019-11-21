@@ -17,6 +17,8 @@
 
 * [get_next_line](get_next_line/)
 
+* [Camagru](Camagru/)
+
 ## Rules
 
 <b>There are no ru...Nah, in a world full of chaos you gotta keep order, so here we go:</b>    
